@@ -20,6 +20,11 @@ class ProductTest < ActiveSupport::TestCase
     assert_not @product.valid?
   end
 
+  test "warehouse should be present" do
+  	@product.warehouse = "		"
+  	assert_not @product.valid?
+  end
+
   test "name should not be too long" do
     @product.name = "a" * 101
     assert_not @product.valid?
