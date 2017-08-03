@@ -5,6 +5,4 @@ class StaticPagesController < ApplicationController
   def warehouses
   end
 
-  def products
-  end
 end

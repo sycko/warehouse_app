@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
   def setup
-    @product = Product.new(name: "Example Product", description: "Example description", 
-    						warehouse: "Example Warehouse")
+    @product = Product.new(name: "Example", description: "Description", 
+    						warehouse: "Warehouse")
   end
 
   test "should be valid" do

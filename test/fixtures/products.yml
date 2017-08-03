@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-#one:
- # name: MyString
- # description: MyString
- # warehouse: MyString
+product_one:
+ name: Example Product
+ description: Example description
+ warehouse: Example warehouse
 
-#two:
- # name: MyString
- # description: MyString
- # warehouse: MyString
+product_two:
+ name: Example Product 2
+ description: Example description 2
+ warehouse: Example warehouse 2
+

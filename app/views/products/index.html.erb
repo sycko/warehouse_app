@@ -1,0 +1,11 @@
+<% provide(:title, 'Products') %>
+<h1>All Products</h1>
+
+<%= will_paginate %>
+
+<div class="products">
+	<%= render @products %>
+    <%= link_to "Create a product!", products_new_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+
