@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit]
+  before_action :logged_in_user, only: [:new, :create, :edit, :destroy]
 
   def index
   	@products = Product.paginate(page: params[:page])
@@ -28,12 +28,19 @@ class ProductsController < ApplicationController
   end
 
   def update
-  	@product = Product.find(params [:id])
+  	@product = Product.find(params[:id])
   	if @product.update_attributes(product_params)
-  		#handle successful update
+  		flash[:success] = "Product updated"
+      	redirect_to @product
     else
 	  render 'edit'
   	end
+  end
+
+  def destroy
+    Product.find(params[:id]).destroy
+    flash[:success] = "Product deleted"
+    redirect_to products_path
   end
 
   private
@@ -47,6 +54,7 @@ class ProductsController < ApplicationController
     # Confirms a logged-in user.
     def logged_in_user
       unless logged_in?
+      	store_location
         flash[:danger] = "Please log in."
         redirect_to login_url
       end
