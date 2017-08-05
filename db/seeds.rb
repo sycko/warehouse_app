@@ -3,7 +3,9 @@ User.create!(name:  "Example User",
              email: "example@example.com",
              password:              "example",
              password_confirmation: "example",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 99.times do |n|
   name  = Faker::Name.name
@@ -13,8 +15,11 @@ User.create!(name:  "Example User",
                email: email,
                password:              password,
                password_confirmation: password,
-               admin: true)
+               admin: true,
+               activated: true,
+               activated_at: Time.zone.now)
 end
+
 
 #Products
 Product.create!(name: "Product",
@@ -22,10 +27,10 @@ Product.create!(name: "Product",
 				warehouse: "Warehouse")
 
 99.times do |n|
-	name = Faker::Name.name
-	description = "description-#{n+1}"
+	dish = Faker::Food.unique.ingredient
+	description = Faker::Lorem.sentence
 	warehouse = "Warehouse-#{n+1}"
-	Product.create!(name: name,
+	Product.create!(name: dish,
 					description: description,
 					warehouse: warehouse)
 end
