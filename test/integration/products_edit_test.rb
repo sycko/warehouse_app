@@ -13,7 +13,7 @@ class ProductsEditTest < ActionDispatch::IntegrationTest
     assert_template 'products/edit'
     patch product_path(@product), params: { product: { name: "     ",
                                               description: "     ",
-                                              warehouse: "     "} }
+                                              warehouses_id: "     "} }
 
     assert_template 'products/edit'
   end
@@ -24,15 +24,12 @@ class ProductsEditTest < ActionDispatch::IntegrationTest
     assert_template 'products/edit'
     name  = "Example"
     description = "Example"
-    warehouse = "Example"
-    patch product_path(@product), params: { product: { name: "Example",
-                                              description: "Example",
-                                              warehouse: "Example"} }
+    patch product_path(@product), params: { product: { name: name,
+                                              description: description} }
     assert_not flash.empty?
     assert_redirected_to @product
     @product.reload
     assert_equal name,  @product.name
     assert_equal description, @product.description
-    assert_equal warehouse, @product.warehouse
   end
 end

@@ -1,0 +1,7 @@
+<li>
+  <%= link_to warehouse.name, warehouse %>
+  <% if current_user.try(:admin?) %>
+    | <%= link_to "delete", warehouse, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

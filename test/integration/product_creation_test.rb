@@ -12,7 +12,7 @@ class ProductCreationTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Product.count' do
       post products_path, params: { product: { name:  " ",
                                          description: " ",
-                                         warehouse:   " "} }
+                                         warehouses_id:   " "} }
     end
     assert_template 'products/new'
   end
@@ -23,7 +23,7 @@ class ProductCreationTest < ActionDispatch::IntegrationTest
     assert_difference 'Product.count', 1 do
       post products_path, params: { product: { name:  "Example",
                                          description: "Description",
-                                         warehouse:   "Warehouse" } }
+                                         warehouses_id:   "Warehouse" } }
     end
     follow_redirect!
     assert_template 'products/show'

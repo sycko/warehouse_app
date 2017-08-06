@@ -22,15 +22,38 @@ end
 
 
 #Products
-Product.create!(name: "Product",
-				description: "Description",
-				warehouse: "Warehouse")
+#Product.create!(name: "Product",
+#				description: "Description",
+#				warehouse: "Warehouse")
+#
+#99.times do |n|
+#	dish = Faker::Food.unique.ingredient
+#	description = Faker::Lorem.sentence
+#	warehouse = "Warehouse-#{n+1}"
+#	Product.create!(name: dish,
+#					description: description,
+#					warehouse: warehouse)
+#end
 
-99.times do |n|
-	dish = Faker::Food.unique.ingredient
-	description = Faker::Lorem.sentence
-	warehouse = "Warehouse-#{n+1}"
-	Product.create!(name: dish,
-					description: description,
-					warehouse: warehouse)
+#Warehouses
+Warehouse.create!(	name: "Warehouse-0",
+					street: Faker::Address.street_address,
+					city: Faker::Address.city,
+					state: Faker::Address.state,
+					zip: Faker::Address.zip_code,
+					phone: Faker::PhoneNumber.phone_number)
+
+9.times do |n|
+	name = "Warehouse-#{n+1}"
+	street = Faker::Address.street_address
+	city = Faker::Address.city
+	state = Faker::Address.state
+	zip = Faker::Address.zip_code
+	phone = Faker::PhoneNumber.phone_number
+	Warehouse.create!(	name: name,
+						street: street,
+						city: city,
+						state: state,
+						zip: zip,
+						phone: phone)
 end

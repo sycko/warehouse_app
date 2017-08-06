@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805191353) do
+ActiveRecord::Schema.define(version: 20170805195534) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "warehouse"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "warehouses_id"
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20170805191353) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "warehouses", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

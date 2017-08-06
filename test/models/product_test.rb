@@ -3,7 +3,7 @@ require 'test_helper'
 class ProductTest < ActiveSupport::TestCase
   def setup
     @product = Product.new(name: "Example", description: "Description", 
-    						warehouse: "Warehouse")
+    						warehouses_id: "warehouses")
   end
 
   test "should be valid" do
@@ -21,7 +21,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "warehouse should be present" do
-  	@product.warehouse = "		"
+  	@product.warehouses_id = ""
   	assert_not @product.valid?
   end
 
@@ -37,7 +37,6 @@ class ProductTest < ActiveSupport::TestCase
 
   test "products should be unique" do
     duplicate_product = @product.dup
-    duplicate_product.name = @product.name.upcase
     @product.save
     assert_not duplicate_product.valid?
   end

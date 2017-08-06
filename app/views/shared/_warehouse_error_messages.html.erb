@@ -1,0 +1,12 @@
+<% if @warehouse.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@warehouse.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @warehouse.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

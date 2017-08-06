@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+warehouse_one:
+  name: Example name
+  street: Example street
+  city: Example city
+  state: Example state
+  zip: Example zip
+  phone: Example phone
+
+two:
+  name: Example name
+  street: Example street
+  city: Example city
+  state: Example state
+  zip: Example zip
+  phone: Example phone

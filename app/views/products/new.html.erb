@@ -13,8 +13,8 @@
       <%= f.label :description %>
       <%= f.text_field :description, class: 'form-control' %>
 
-      <%= f.label :warehouse %>
-      <%= f.text_field :warehouse, class: 'form-control' %>
+      <%= f.label :warehouses %>
+      <%= f.collection_select :warehouses_id, Warehouse.all, :id, :name, {:include_blank => "Please Select" } %>
 
       <%= f.submit "Create my product", class: "btn btn-primary" %>
     <% end %>

@@ -3,10 +3,10 @@
 product_one:
  name: Example Product
  description: Example description
- warehouse: Example warehouse
+ warehouses_id: Example warehouse
 
 product_two:
  name: Example Product 2
  description: Example description 2
- warehouse: Example warehouse 2
+ warehouses_id: Example warehouse 2
 

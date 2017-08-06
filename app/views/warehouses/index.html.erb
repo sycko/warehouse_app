@@ -1,0 +1,9 @@
+<% provide(:title, 'Warehouses') %>
+<h1>All Warehouses</h1>
+
+<div class="Warehouses">
+  <%= render @warehouse %>
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'New Warehouse', new_warehouse_path %>
+  <% end %>
+</div>

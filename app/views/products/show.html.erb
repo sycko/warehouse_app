@@ -4,7 +4,7 @@
     <section class="user_info">
       <h1><%= @product.name %></h1>
       <li><%= @product.description %></li>
-      <li><%= @product.warehouse %></li>
+      <li><%= link_to "Warehouse", warehouse_path(@product.warehouses_id) %></li>
       <%= link_to "Edit", edit_product_path%>
     </section>
   </aside>
