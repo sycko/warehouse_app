@@ -54,6 +54,10 @@ h2 {
   color: $gray-light;
 }
 
+h4 {
+  text-align: center
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -210,6 +214,7 @@ input {
 .products {
   list-style: none;
   margin: 0;
+  text-align: center;
   li {
     overflow: auto;
     padding: 10px 0;

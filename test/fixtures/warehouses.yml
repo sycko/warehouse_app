@@ -8,7 +8,7 @@ warehouse_one:
   zip: Example zip
   phone: Example phone
 
-two:
+warehouse_two:
   name: Example name
   street: Example street
   city: Example city

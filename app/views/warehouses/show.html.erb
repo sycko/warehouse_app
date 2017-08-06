@@ -2,12 +2,13 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1><%= @warehouse.name %></h1>
-      <li><%= @warehouse.street %></li>
-      <li><%= @warehouse.city %></li>
-      <li><%= @warehouse.state %></li>
-      <li><%= @warehouse.zip %></li>
-      <li><%= @warehouse.phone %></li>
+      <h3><%= @warehouse.name %></h3>
+      <h1><%= @warehouse.street %></h1>
+      <h1><%= @warehouse.city %></h1>
+      <h1><%= @warehouse.state %></h1>
+      <h1><%= @warehouse.zip %></h1>
+      <h1><%= @warehouse.phone %></h1>
+      <li><%=  %></li>
       <% if current_user.try(:admin?) %>
         <%= link_to 'Edit', edit_warehouse_path(@warehouse) %>
       <% end %>  

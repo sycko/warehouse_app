@@ -1,7 +1,7 @@
-<li>
+<h4>
   <%= link_to warehouse.name, warehouse %>
   <% if current_user.try(:admin?) %>
-    | <%= link_to "delete", warehouse, method: :delete,
+    | <%= link_to "Delete", warehouse, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
-</li>
+</h4>
